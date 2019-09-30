@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>头部</title>
+    <link rel="stylesheet" href="./css/head.css">
+</head>
+<body>
+    <div id="blTop">
+        <div class="blTop">
+            <ol>
+                <li>百联集团旗下全渠道电商平台</li>
+                <li class="wzdh"><a href="javaScript:;" >网站导航</a><em></em>
+                    <div class="blTop1">
+                        <span>百联集团官网</span>
+                        <span>安付网宝</span>
+                        <span>第一医药</span>
+                        <span>OK会员卡专区</span>
+                    </div>
+                </li>
+                <li>消息</li>
+            </ol>
+            <ul>
+                <li><a href="javaScript:;">请登录</a></li>
+                <li><a href="javaScript:;">注册</a></li>
+                <li><a href="javaScript:;">我的订单</a></li>
+                <li class="wdbl"><a href="javaScript:;">我的百联</a><em></em>
+                    <div class="ul_wdbl">
+                        <span>我的订单</span>
+                        <span>我的评价</span>
+                        <span>我的积分</span>
+                        <span>我的收藏</span>
+                        <span>我的优惠卷</span>
+                    </div>
+                </li>
+                <li><a href="javaScript:;">充值缴费</a><em></em>
+                    <ul class="ul_czjf">
+                        <li>
+                            <h4>水电煤缴费</h4>
+                            <span>缴费首页</span>
+                            <span>水费缴费</span>
+                            <span>电费缴费</span>
+                            <span>燃气缴费</span>
+                        </li>
+                        <li>
+                            <h4>手机充值</h4>
+                            <span>手机充值</span>
+                            <span>流量充值</span>
+                        </li>
+                        <li>
+                            <h4>其他缴费</h4>
+                            <span>固定/宽度充值</span>
+                            <span>铁通缴费</span>
+                            <span>有线电视缴费</span>
+                        </li>
+                        <li>
+                            <h4>游戏点卡</h4>
+                            <span>腾讯Q币充值</span>
+                            <span>盛大点劵充值</span>
+                            <span>更多充值</span>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="javaScript:;">客户服务</a><em></em></li>
+                <li><a href="javaScript:;">掌上百联</a><em></em></li>
+                <li><a href="javaScript:;">购物车</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="bailian">
+        <img src="./img/header-logo.png" alt="">
+        <img src="./img/1744576793.png" alt="">
+        <div class="ipt">
+            <div class="border"><input type="text" class="sou" placeholder="美心"></div><input type="button" value="搜索" class="suo">
+            <div class="tuijian">
+                    <a href="javaScript:;">折叠洗衣机</a>
+                    <a href="javaScript:;">洗衣液</a>
+                    <a href="javaScript:;">卫生巾</a>
+                    <a href="javaScript:;">盐</a>
+                    <a href="javaScript:;">水</a>
+                    <a href="javaScript:;">光明</a>
+                    <a href="javaScript:;">u盘</a>
+                    <a href="javaScript:;">杏花楼</a>
+                    <a href="javaScript:;">雅诗兰黛</a>
+            </div>
+            <div class="anfubao">安付宝OK卡专区</div>
+            <ul class="list"></ul>
+            
+        </div>
+    </div>
+</body>
+<script src="./js/head.min.js"></script>
+<script>
+     // https://search.bl.com/autoComputele.html?callback=jQuery1820017373256516497237_1568891107295&kw=aaaaaaa&count=11&channel=3&_=1568891121951
+   //获取搜索框的值
+   function fn(data) {
+    console.log(data.result);
+    for(let i = 0,len = data.result.length; i < len; i ++){
+        let li = document.createElement("li");
+        li.innerHTML = data.result[i][0];
+        $(".list").append(li);
+    }
+    }   
+    $(".sou").keyup(function(){ 
+        $(".list").html(" ");
+        let str = $(this).val();
+        let sc = document.createElement('script');
+         sc.src = `https://suggest.taobao.com/sug?code=utf-8&q=${str}&_ksTS=1568952069159_572&callback=fn&k=1&area=c2c&bucketid=5`;
+         $('head').append(sc);
+       
+    })
+    
+</script>
+</html>

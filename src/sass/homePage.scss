@@ -1,0 +1,58 @@
+@import "./commonality.scss";
+
+
+#nav{
+    width: 1190px;
+    height: 40px;
+    background: green;
+     margin: 0 auto;
+    .classify{
+        width: 190px;
+        height: 40px;
+        float: left;
+        line-height: 40px;
+        position: relative;
+        .menu{
+            width: 190px;
+            height: 430px;
+            @include position(absolute,0,40px);
+            background: green;
+            a{
+                display: block;
+                font-size: 13px;
+                line-height: 31px;
+            }
+        }
+        .nav_left{
+            display: block;
+            text-align: center;
+            background: {
+             color: #000;   
+             url:"../img/filenavicon-1.png" no-repeat center;
+             position: 10px center;
+            }   
+        }
+    }
+    .nav_right{
+        float: left;
+        display: block;
+        font-weight:700;
+        line-height: 40px;
+        padding: 0 18px;
+        color: #000;
+    }
+}
+
+
+#carousel {
+    height: 430px;
+    background: green;
+    .demo {  
+        img {
+            display: block;
+            width: 780px !important;
+            height: 100%;
+            margin: 0 auto;
+        }
+    }
+}
