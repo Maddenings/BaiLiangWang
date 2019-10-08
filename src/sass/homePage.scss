@@ -1,42 +1,124 @@
 @import "./commonality.scss";
 
 
-#nav{
+#nav {
     width: 1190px;
     height: 40px;
-    background: green;
-     margin: 0 auto;
-    .classify{
+    margin: 0 auto;
+
+    .classify {
         width: 190px;
         height: 40px;
         float: left;
-        line-height: 40px;
         position: relative;
-        .menu{
+
+        .menu {
             width: 190px;
             height: 430px;
-            @include position(absolute,0,40px);
-            background: green;
-            a{
-                display: block;
-                font-size: 13px;
+            @include position(absolute, 0, 40px);
+            -webkit-box-shadow: -2px 0 2px rgba(0, 0, 0, .2);
+            background: #999;
+            z-index: 30;
+
+            li {
                 line-height: 31px;
+
+                i {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 10px;
+                    margin-top: 5px;
+
+                }
+
+                .lie {
+                    display: block;
+                    font-size: 13px;
+                    line-height: 31px;
+                    color: #fff;
+                    margin-left: 40px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:hover .menu1 {
+                        display: block
+                    }
+
+                    ;
+                }
+
+                .menu1 {
+                    width: 1000px;
+                    height: 430px;
+                    @include position(absolute, 190px, 0);
+                    background: #fff;
+
+                    display: none;
+                    z-index: 40;
+
+                    .one {
+                        width: 1000px;
+                        float: left;
+                        margin: 5px 0;
+
+                        span {
+                            float: left;
+                            font-size: 12px;
+                            font-weight: 700;
+                            margin: 0 20px;
+                        }
+
+                        .menu2 {
+                            width: 585px;
+                            float: left;
+                            padding-left: 15px;
+
+                            a {
+                                display: inline-block;
+                                color: #666;
+                                margin: 0 5px;
+                                font-size: 13px;
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover i {
+                    background: #888;
+                }
             }
+
         }
-        .nav_left{
+
+        .nav_left {
             display: block;
             text-align: center;
+            line-height: 40px;
+            font-size: 14px;
+            color: #fff;
+
             background: {
-             color: #000;   
-             url:"../img/filenavicon-1.png" no-repeat center;
-             position: 10px center;
-            }   
+                color: #000;
+                image: url("../img/filenavicon-1.png");
+                repeat: no-repeat;
+                position: 15px 14px;
+                size: 16px;
+            }
         }
     }
-    .nav_right{
+
+    .nav_right {
         float: left;
         display: block;
-        font-weight:700;
+        font-weight: 700;
         line-height: 40px;
         padding: 0 18px;
         color: #000;
@@ -47,12 +129,255 @@
 #carousel {
     height: 430px;
     background: green;
-    .demo {  
+    position: relative;
+
+    .demo {
         img {
             display: block;
-            width: 780px !important;
+            width: 809px !important;
             height: 100%;
             margin: 0 auto;
         }
     }
+//轮播图上的登陆
+    // .boxbox{
+    //     width: 215px;
+    //     height:420px;
+    //     background: red;
+    //     z-index: 50;
+    //     position: absolute;
+    //     left: 50%;
+    //     right: 100px;
+    // }
 }
+
+//轮播图下面
+#chao {
+    width: 1190px;
+    height: 270px;
+    margin: 20px auto;
+    // background: red;
+    overflow: hidden;
+    position: relative;
+    border-right: 1px solid #c4c4c4;
+
+    //左面
+    .one {
+        width: 250px;
+        height: 270px;
+        float: left;
+        position: relative;
+        z-index: 100;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            transition: 0.4s;
+            &:hover {
+                width: 110%;
+                height: 110%;
+                margin-left: -10px;
+                margin-top: -10px;
+            }
+        }
+    }
+
+    //右面
+    ul {
+        width: 4000px;
+        height: 258px;
+        position: absolute;
+        left: 250px;
+        //background: pink;
+        border: 1px solid #c4c4c4;
+        border-left: none;
+        padding-top: 10px;
+        overflow: hidden;
+
+        li {
+            width: 157px;
+            height: 250px;
+            //background: #000;
+            float: left;
+            border-right: 1px dotted #c4c4c4;
+
+            div {
+                width: 140px;
+                height: 140px;
+                margin: 0 auto;
+                overflow: hidden;
+
+                img {
+                    width: 140px;
+                    height: 140px;
+                }
+            }
+
+            a {
+                display: block;
+                height: 40px;
+                font-size: 12px;
+                padding: 0 7px;
+                line-height: 20px;
+                color: black;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            span {
+                display: block;
+                color: red;
+                padding: 0 7px;
+            }
+
+            p {
+                color: #c4c4c4;
+                font-size: 12px;
+                padding: 10px 7px;
+            }
+        }
+    }
+
+    #zz_left {
+        width: 20px;
+        line-height: 50px;
+        text-align: center;
+        background: #ccc;
+        position: absolute;
+        left: 255px;
+        top: 50%;
+        margin-top: -25px;
+        z-index: 40;
+        cursor: pointer;
+        opacity: 0.5;
+        -webkit-box-shadow: -2px 0 2px rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    #zz_right {
+        width: 20px;
+        line-height: 50px;
+        text-align: center;
+        background: #ccc;
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        right: 5px;
+        z-index: 40;
+        cursor: pointer;
+        -webkit-box-shadow: -2px 0 2px rgba(0, 0, 0, .2);
+        opacity: 0.5;
+    }
+}
+
+//小轮播 全球购
+#gou{
+    width: 1190px;
+    height: 370px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    position: relative;
+    .box{
+        width:305px;
+        height: 370px;
+        background: green;
+        position: relative;
+        overflow: hidden;
+        ul{
+            width: 400%;
+            height: 370px;
+            position: absolute;
+            left: 0;
+            li{
+                width: 305px;
+                height: 370px;
+                float: left;
+                overflow: hidden;
+                img{
+                    width: 305px;
+                    height: 370px;
+                    display: block;
+                    transition: 0.3s;
+                    cursor: pointer;
+                    &:hover {
+                        width: 110%;
+                        height: 110%;
+                        margin-left: -10px;
+                        margin-top: -10px;
+                    }
+                }
+            }
+        }
+        
+    }
+    .abc{
+        width: 150px;
+        height: 10px;
+        position: absolute;
+        left: 70px;
+        bottom: 25px;
+        z-index: 40;
+        a{
+            display: block;
+            width: 25px;
+            height: 10px;
+            background: red;
+            margin-left:20px; 
+            float: left;
+        }
+    }
+    ol{
+        width: 885px;
+        height:370px;
+        position: absolute;
+        left: 305px;
+        top: 0;
+        li{
+            width:280px;
+            height:180px;
+            background: #000;
+            float: left;
+            margin-left:15px;
+            margin-bottom: 10px; 
+            overflow: hidden;
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+                border:none;
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover {
+                    width: 110%;
+                    height: 110%;
+                    margin-left: -10px;
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+//滚动滚动条跟随
+    #fixed{
+        width: 100%;
+        height:70px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        .fixed{
+            width: 1190px;
+            height: 70px;
+            margin: 0 auto;
+            background: red;
+        }
+    }
+
+
+
